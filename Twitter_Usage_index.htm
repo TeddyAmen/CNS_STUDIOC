@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Maryland Gubernatorial Race</title>
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<style type="text/css">
+${demo.css}
+		</style>
+		<script type="text/javascript">
+$(function () {
+    $('#container').highcharts({
+        credits: {
+        	enabled: false
+        },
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Larry Hogan has tweeted more in October since Brown has in last five months',
+            margin: 30,
+            	style: {
+            		fontWeight: "bold",
+            		}
+        },
+        subtitle: {
+            text: 'Source: <a href="http://www.tweetstats.com/">Tweetstats.com</a>'
+        },
+        colors: ['#005a9d', '#ff1919',],
+        xAxis: {
+            categories: [
+                'June',
+                'July',
+                'August',
+                'Sept.',
+                'Oct.'
+            ],
+        },
+       //labels: [{
+       	//	items:
+       	//		[{
+       	//			html:
+       	//		}]
+       //}]
+        yAxis: {
+            min: 0,
+            title: {
+                text: '  ',
+                	style: {
+							color: '#000000'
+							}
+                }
+            },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.0f} tweets</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            valueDecimals: 0,
+            useHTML: true,
+            borderColor: '#FFFFFF',
+            borderWidth: 0
+        },
+        plotOptions: {
+            column: {
+            	dataLabels: {
+        			enabled: true
+        	    },
+                pointPadding: 0,
+                borderWidth: 1.5
+                    }
+        },
+        series:
+         [{
+            name: 'Anthony Brown',
+            data: [244, 39, 34, 95, 136,]
+        }, 
+		  {
+            name: 'Larry Hogan',
+            data: [408, 115, 136, 397, 1434,]
+
+        }]
+    });
+});
+		</script>
+	</head>
+	<body>
+<script src="../../js/highcharts.js"></script>
+<script src="../../js/modules/exporting.js"></script>
+
+<div id="container" style="min-width: 310px; width: 600px; height: 400px; margin: 0 auto"></div>
+<div style="position: absolute; font-size: 11px; font-family: arial; right:500px; bottom: 290px; color:#606060; ">Data shown was collected over five months for both <a href="https://twitter.com/Hogan4Governor">@BrownforMD</a> and <a href="https://twitter.com/Hogan4Governor">@Hogan4Governor</a> at 12:00 p.m. on October 22.</div>
+
+	</body>
+</html>
